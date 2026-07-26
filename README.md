@@ -62,6 +62,6 @@ See [docs/WALKTHROUGH.md](docs/WALKTHROUGH.md) for a guided tour of the code.
 
 ## Credits
 
-Built by Euan, developed with AI pair-programming assistance; architecture,
+Built by Euan Brown, developed with AI pair-programming assistance; architecture,
 scope and every line reviewed and owned by me. Data courtesy of SEC EDGAR and
 ClinicalTrials.gov public APIs.
