@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulseboard · healthtech market intelligence</title>
+<style>
+  :root {
+    --bg: #0e1116; --panel: #161b22; --border: #262d38;
+    --text: #e6e9ee; --muted: #8b95a5; --accent: #4cc38a;
+    --edgar: #6ca0f6; --trials: #4cc38a; --news: #e5a75c;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 15px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 28px clamp(16px, 4vw, 48px);
+  }
+  header { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+  h1 { font-size: 22px; letter-spacing: -0.02em; }
+  h1 .dot { color: var(--accent); }
+  .sub { color: var(--muted); font-size: 13px; }
+  .badge {
+    font-size: 11px; padding: 2px 8px; border-radius: 999px;
+    border: 1px solid var(--border); color: var(--muted);
+  }
+  .meta { color: var(--muted); font-size: 13px; margin-bottom: 22px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  section {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 18px; min-width: 0;
+  }
+  section h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+  section h2 b { color: var(--text); }
+  ul { list-style: none; }
+  li { padding: 9px 0; border-top: 1px solid var(--border); }
+  li:first-child { border-top: 0; }
+  a { color: var(--text); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .item-title { display: block; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .item-sub { font-size: 12px; color: var(--muted); }
+  .tag { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 7px; vertical-align: baseline; }
+  .tag.edgar { background: var(--edgar); } .tag.trials { background: var(--trials); } .tag.news { background: var(--news); }
+  footer { margin-top: 26px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Pulseboard<span class="dot">.</span></h1>
+    <span class="sub">healthtech filings · trials · funding, one feed</span>
+    {% if offline %}<span class="badge">demo data — run a live refresh for real-time</span>{% endif %}
+  </header>
+  <p class="meta">
+    Watching {{ watchlist | length }} companies ·
+    {{ counts.get("edgar", 0) }} filings · {{ counts.get("trials", 0) }} trial updates · {{ counts.get("news", 0) }} news items
+  </p>
+
+  <div class="grid">
+    <section style="grid-column: 1 / -1;">
+      <h2><b>Catalyst feed</b> — everything, newest first</h2>
+      <ul>
+        {% for e in feed %}
+        <li>
+          <a class="item-title" href="{{ e.url }}" target="_blank" rel="noopener">
+            <span class="tag {{ e.source }}"></span>{{ e.title }}
+          </a>
+          <span class="item-sub">{{ e.date or "—" }} · {{ e.company }}{% if e.detail and e.detail != e.company %} · {{ e.detail }}{% endif %}</span>
+        </li>
+        {% else %}
+        <li class="item-sub">No events yet — run <code>python -m scripts.refresh</code>.</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section>
+      <h2><b>SEC filings</b> · watchlist</h2>
+      <ul>
+        {% for e in filings %}
+        <li>
+          <a class="item-title" href="{{ e.url }}" target="_blank" rel="noopener">{{ e.title }}</a>
+          <span class="item-sub">{{ e.date or "—" }}</span>
+        </li>
+        {% else %}<li class="item-sub">Nothing yet.</li>{% endfor %}
+      </ul>
+    </section>
+
+    <section>
+      <h2><b>Clinical trials</b> · tracked topics</h2>
+      <ul>
+        {% for e in trials %}
+        <li>
+          <a class="item-title" href="{{ e.url }}" target="_blank" rel="noopener">{{ e.title }}</a>
+          <span class="item-sub">{{ e.date or "—" }} · {{ e.detail }}</span>
+        </li>
+        {% else %}<li class="item-sub">Nothing yet.</li>{% endfor %}
+      </ul>
+    </section>
+
+    <section>
+      <h2><b>Funding &amp; deals</b> · news</h2>
+      <ul>
+        {% for e in news %}
+        <li>
+          <a class="item-title" href="{{ e.url }}" target="_blank" rel="noopener">{{ e.title }}</a>
+          <span class="item-sub">{{ e.date or "—" }} · {{ e.detail }}</span>
+        </li>
+        {% else %}<li class="item-sub">Nothing yet.</li>{% endfor %}
+      </ul>
+    </section>
+  </div>
+
+  <footer>Data: SEC EDGAR · ClinicalTrials.gov · public RSS feeds. Built by Euan.</footer>
+</body>
+</html>
