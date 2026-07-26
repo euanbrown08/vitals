@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Sample healthtech feed (fixture: real July 2026 headlines for demo)</title>
+    <item>
+      <title>Daniel Ek's body-scanning startup Neko Health raises another $700M</title>
+      <link>https://techcrunch.com/2026/07/15/daniel-eks-body-scanning-startup-neko-health-raises-another-700m/</link>
+      <description>Series C co-led by Lightspeed ahead of a US launch.</description>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Bunkerhill Health raises $55M for AI agents that work inside hospitals</title>
+      <link>https://fortune.com/2026/07/16/bunkerhill-health-raises-55-million-ai-agents-work-inside-hospitals/</link>
+      <description>Khosla-led round including a $25M Series B.</description>
+      <pubDate>Thu, 16 Jul 2026 09:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Finland's CurifyLabs raises €12 million to expand 3D-printing-based medicine compounding</title>
+      <link>https://www.eu-startups.com/2026/07/finlands-curifylabs-raises-e12-million-to-expand-3d-printing-based-medicine-compounding/</link>
+      <description>Series A co-led by Sandwater and HealthCap.</description>
+      <pubDate>Mon, 06 Jul 2026 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Weekly research roundup: sleep study results published</title>
+      <link>https://example.com/roundup</link>
+      <description>A quiet week otherwise. (This item should be filtered out by keywords.)</description>
+      <pubDate>Sun, 05 Jul 2026 08:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

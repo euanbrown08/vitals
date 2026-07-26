@@ -1,0 +1,30 @@
+{
+  "Example Health Inc": {
+    "cik": 1111111,
+    "filings": {
+      "recent": {
+        "form": ["8-K", "4", "10-Q", "S-1", "3"],
+        "filingDate": ["2026-07-20", "2026-07-18", "2026-07-01", "2026-06-15", "2026-06-10"],
+        "accessionNumber": [
+          "0001111111-26-000010",
+          "0001111111-26-000009",
+          "0001111111-26-000008",
+          "0001111111-26-000007",
+          "0001111111-26-000006"
+        ],
+        "primaryDocument": ["ex8k.htm", "form4.xml", "ex10q.htm", "s1.htm", "form3.xml"]
+      }
+    }
+  },
+  "Sample Diagnostics Corp": {
+    "cik": 2222222,
+    "filings": {
+      "recent": {
+        "form": ["10-K", "8-K"],
+        "filingDate": ["2026-07-10", "2026-06-28"],
+        "accessionNumber": ["0002222222-26-000005", "0002222222-26-000004"],
+        "primaryDocument": ["ex10k.htm", "ex8k.htm"]
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "digital therapeutic": {
+    "studies": [
+      {
+        "protocolSection": {
+          "identificationModule": {
+            "nctId": "NCT00000001",
+            "briefTitle": "Sample Study: App-Based CBT for Insomnia (fixture data)"
+          },
+          "statusModule": {
+            "overallStatus": "RECRUITING",
+            "lastUpdatePostDateStruct": { "date": "2026-07-21" }
+          },
+          "designModule": { "phases": ["NA"] },
+          "sponsorCollaboratorsModule": { "leadSponsor": { "name": "Example University" } }
+        }
+      },
+      {
+        "protocolSection": {
+          "identificationModule": {
+            "nctId": "NCT00000002",
+            "briefTitle": "Sample Study: Remote Monitoring After Cardiac Surgery (fixture data)"
+          },
+          "statusModule": {
+            "overallStatus": "ACTIVE_NOT_RECRUITING",
+            "lastUpdatePostDateStruct": { "date": "2026-07-18" }
+          },
+          "designModule": { "phases": ["PHASE2"] },
+          "sponsorCollaboratorsModule": { "leadSponsor": { "name": "Sample Medical Center" } }
+        }
+      }
+    ]
+  }
+}
