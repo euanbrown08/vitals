@@ -25,7 +25,6 @@ def _db():
 def dashboard(request: Request):
     conn = _db()
     ctx = {
-        "request": request,
         "counts": store.counts(conn),
         "feed": store.latest(conn, limit=30),
         "filings": store.latest(conn, source="edgar", limit=12),
@@ -35,7 +34,7 @@ def dashboard(request: Request):
         "watchlist": config.WATCHLIST,
     }
     conn.close()
-    return templates.TemplateResponse("index.html", ctx)
+    return templates.TemplateResponse(request, "index.html", ctx)
 
 
 @app.get("/api/events")
