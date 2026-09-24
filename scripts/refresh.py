@@ -2,7 +2,7 @@
 
 Usage:
     python -m scripts.refresh            # live APIs
-    PULSEBOARD_OFFLINE=1 python -m scripts.refresh   # bundled sample data
+    VITALS_OFFLINE=1 python -m scripts.refresh   # bundled sample data
 """
 
 import sys
@@ -10,8 +10,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from pulseboard import config, store
-from pulseboard.sources import clinicaltrials, edgar, news
+from vitals import config, store
+from vitals.sources import clinicaltrials, edgar, news
 
 
 def main():

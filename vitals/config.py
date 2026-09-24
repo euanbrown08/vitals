@@ -46,14 +46,14 @@ NEWS_KEYWORDS = [
     "ipo", "valuation", "venture",
 ]
 
-# SEC asks API users to identify themselves. Set PULSEBOARD_CONTACT to your
+# SEC asks API users to identify themselves. Set VITALS_CONTACT to your
 # email before running a live refresh.
-USER_AGENT = "pulseboard/0.1 ({})".format(
-    os.environ.get("PULSEBOARD_CONTACT", "contact-not-set@example.com")
+USER_AGENT = "vitals/0.1 ({})".format(
+    os.environ.get("VITALS_CONTACT", "contact-not-set@example.com")
 )
 
-# When PULSEBOARD_OFFLINE=1, sources read bundled fixture data instead of
+# When VITALS_OFFLINE=1, sources read bundled fixture data instead of
 # calling the live APIs. Used for tests and offline demos.
-OFFLINE = os.environ.get("PULSEBOARD_OFFLINE") == "1"
+OFFLINE = os.environ.get("VITALS_OFFLINE") == "1"
 
-DB_PATH = os.environ.get("PULSEBOARD_DB", "pulseboard.db")
+DB_PATH = os.environ.get("VITALS_DB", "vitals.db")

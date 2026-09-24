@@ -1,7 +1,7 @@
 """FastAPI app serving the dashboard and a small JSON API.
 
 Run with:
-    uvicorn pulseboard.app:app --reload
+    uvicorn vitals.app:app --reload
 """
 
 from pathlib import Path
@@ -11,9 +11,9 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from starlette.requests import Request
 
-from pulseboard import config, store
+from vitals import config, store
 
-app = FastAPI(title="Pulseboard", version="0.1.0")
+app = FastAPI(title="Vitals", version="0.1.0")
 templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
 
 

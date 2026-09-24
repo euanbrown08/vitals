@@ -1,4 +1,4 @@
-from pulseboard import store
+from vitals import store
 
 
 def _event(ref, source="news", date="2026-07-20"):

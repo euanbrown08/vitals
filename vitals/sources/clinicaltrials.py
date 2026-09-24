@@ -8,7 +8,7 @@ from pathlib import Path
 
 import httpx
 
-from pulseboard import config
+from vitals import config
 
 API_URL = "https://clinicaltrials.gov/api/v2/studies"
 

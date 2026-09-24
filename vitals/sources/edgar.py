@@ -6,7 +6,7 @@ Uses two public, keyless endpoints:
   * https://data.sec.gov/submissions/CIK##########.json  recent filings
 
 SEC fair-use rules: send a real contact in the User-Agent (set
-PULSEBOARD_CONTACT) and keep request rates modest.
+VITALS_CONTACT) and keep request rates modest.
 """
 
 import json
@@ -14,7 +14,7 @@ from pathlib import Path
 
 import httpx
 
-from pulseboard import config
+from vitals import config
 
 TICKER_MAP_URL = "https://www.sec.gov/files/company_tickers.json"
 SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik:0>10}.json"

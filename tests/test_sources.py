@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from pulseboard.sources import clinicaltrials, edgar, news
+from vitals.sources import clinicaltrials, edgar, news
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

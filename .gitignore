@@ -1,6 +1,6 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-pulseboard.db
+vitals.db
 .venv/
 .env

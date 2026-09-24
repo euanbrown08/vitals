@@ -10,7 +10,7 @@ from pathlib import Path
 
 import httpx
 
-from pulseboard import config
+from vitals import config
 
 FIXTURE = Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "news_sample.xml"
 
